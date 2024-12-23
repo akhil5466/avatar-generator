@@ -32,6 +32,7 @@ function updateStatus(message) {
 
 // Get session token
 async function getSessionToken() {
+  console.log('api-key',API_CONFIG.apiKey);
   const response = await fetch(
     `${API_CONFIG.serverUrl}/v1/streaming.create_token`,
     {

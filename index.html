@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>HeyGen Streaming API LiveKit (V2)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/livekit-client/dist/livekit-client.umd.min.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+
+  <body class="bg-gray-100 p-5 font-sans">
+    <div class="max-w-3xl mx-auto bg-white p-5 rounded-lg shadow-md">
+      <div class="flex flex-wrap gap-2.5 mb-5">
+        <input
+          id="avatarID"
+          type="text"
+          placeholder="Avatar ID"
+          class="flex-1 min-w-[200px] p-2 border border-gray-300 rounded-md"
+        />
+        <input
+          id="voiceID"
+          type="text"
+          placeholder="Voice ID"
+          class="flex-1 min-w-[200px] p-2 border border-gray-300 rounded-md"
+        />
+        <button
+          id="startBtn"
+          class="px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+        >
+          Start
+        </button>
+        <button
+          id="closeBtn"
+          class="px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-600 transition-colors"
+        >
+          Close
+        </button>
+      </div>
+
+      <div class="flex flex-wrap gap-2.5 mb-5">
+        <input
+          id="taskInput"
+          type="text"
+          placeholder="Enter text for avatar to speak"
+          class="flex-1 min-w-[200px] p-2 border border-gray-300 rounded-md"
+        />
+        <!-- <button
+          id="talkBtn"
+          class="px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600 transition-colors"
+        >
+          Talk (LLM)
+        </button> -->
+        <button
+          id="repeatBtn"
+          class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors"
+        >
+          Repeat
+        </button>
+      </div>
+
+      <video
+        id="mediaElement"
+        class="w-full max-h-[400px] border rounded-lg my-5"
+        autoplay
+      ></video>
+      <div
+        id="status"
+        class="p-2.5 bg-gray-50 border border-gray-300 rounded-md h-[100px] overflow-y-auto font-mono text-sm"
+      ></div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+    </body>
+    </html>
